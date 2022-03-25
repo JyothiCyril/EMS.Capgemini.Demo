@@ -21,6 +21,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 
+import cap.qa.pages.AddEmpPages;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
@@ -33,6 +34,7 @@ public class TestBase {
 	WebDriverWait expWait;
 	SoftAssert sAssert;
 	// declare the variable for page object model
+	AddEmpPages AddEmpOR;
 
 	@Parameters({"Browser","Url"})
 	@BeforeClass
@@ -65,6 +67,7 @@ public class TestBase {
 		Js = (JavascriptExecutor)driver;
 		sAssert = new SoftAssert();
 		// Page Object model should be instantiated below
+		AddEmpOR = new AddEmpPages(driver);
 		
 	}
 
